@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+ <style>
+ .login-page {
+   width: 360px;
+   padding: 8% 0 0;
+   margin: auto;
+ }
+ .form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+ }
+
+ </style>
+<body>
+
+ <div class="login-page">
+  <div class="form">
+   <form class="login-form"> <input type="text" placeholder="username" /> <input type="password"
+     placeholder="password" /> <button>login</button>
+    <p class="message">Not registered? <a href="#">Create an account</a></p>
+   </form>
+  </div>
+ </div>
+ 
+</body>
+ <script>
+   const form = document.querySelector("form");
+    const username = document.querySelector("#username");
+    const password = document.querySelector("#password");
+    const message = document.querySelector(".message");
+    form.addEventListener("submit", (e) => {
+     e.preventDefault();
+     if (username.value === "user" && password.value === "pass") {
+      message.textContent = "You have successfully logged in!";
+     } else {
+      message.textContent = "Invalid username or password!";
+     }
+    });
+ </script>
+</html>
